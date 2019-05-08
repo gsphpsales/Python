@@ -25,7 +25,15 @@ base = [('eu sou admirada por muitos','alegria'),
 
 #print(base[0])
 
-#list of stop words nltk
-stopwordsnltk = nltk.corpus.stopwords.words('portuguese')
-print(stopwordsnltk)
 
+stopwordsnltk = nltk.corpus.stopwords.words('portuguese')
+#print(stopwordsnltk)
+
+def removestopwords(texto):
+    frases = []
+    for (palavras, emocao) in texto:
+        semstop = [p for p in palavras.split() if p not in stopwordsnltk]
+        frases.append((semstop, emocao))
+    return frases
+
+print(removestopwords(base))
