@@ -57,3 +57,17 @@ def buscapalavras(frases):
     return todaspalavras
 palavras = buscapalavras(frasescomstemming)
 print(palavras)
+
+def buscafrequencia(palavras):
+    palavras = nltk.FreqDist(palavras)
+    return palavras
+
+frequencia = buscafrequencia(palavras)
+print(frequencia.most_common(50))
+
+def buscapalavrasunicas(frequencia):
+    freq = frequencia.keys()
+    return freq
+
+palavrasunicas = buscapalavrasunicas(frequencia)
+print(palavrasunicas)
