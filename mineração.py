@@ -23,4 +23,9 @@ base = [('eu sou admirada por muitos','alegria'),
         ('eu tenho muito medo dele', 'medo'),
         ('estou com medo do resultado dos meus testes', 'medo')]
 
-print(base[0])
+#print(base[0])
+
+#list of stop words nltk
+stopwordsnltk = nltk.corpus.stopwords.words('portuguese')
+print(stopwordsnltk)
+
