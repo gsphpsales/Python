@@ -38,6 +38,7 @@ def removestopwords(texto):
 
 print(removestopwords(base))
 
+#with radical
 def aplicastemmer(texto):
     stemmer = nltk.stem.RSLPStemmer()
     frasessstemming = []
@@ -47,3 +48,12 @@ def aplicastemmer(texto):
     return frasessstemming
 frasescomstemming = aplicastemmer(base)
 print(frasescomstemming)
+
+#words without emotion - emocao
+def buscapalavras(frases):
+    todaspalavras = []
+    for (palavras, emocao) in frases:
+        todaspalavras.extend(palavras)
+    return todaspalavras
+palavras = buscapalavras(frasescomstemming)
+print(palavras)
