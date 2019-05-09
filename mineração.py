@@ -75,11 +75,16 @@ print(palavrasunicas)
 #passing words to be checked in the database. word radical
 
 def extratorpalavras(documento):
-    doc = set (documento)
+    doc = set(documento)
     caracteristicas = {}
     for palavras in palavrasunicas:
         caracteristicas['%s' % palavras] = (palavras in doc)
-    return  caracteristicas
+    return caracteristicas
 
 caracteristicasfrase = extratorpalavras(['am', 'nov', 'dia'])
 print(caracteristicasfrase)
+
+#test base full
+
+basecompleta = nltk.classify.apply_features(extratorpalavras, frasescomstemming)
+print(basecompleta)
