@@ -71,3 +71,15 @@ def buscapalavrasunicas(frequencia):
 
 palavrasunicas = buscapalavrasunicas(frequencia)
 print(palavrasunicas)
+
+#passing words to be checked in the database. word radical
+
+def extratorpalavras(documento):
+    doc = set (documento)
+    caracteristicas = {}
+    for palavras in palavrasunicas:
+        caracteristicas['%s' % palavras] = (palavras in doc)
+    return  caracteristicas
+
+caracteristicasfrase = extratorpalavras(['am', 'nov', 'dia'])
+print(caracteristicasfrase)
